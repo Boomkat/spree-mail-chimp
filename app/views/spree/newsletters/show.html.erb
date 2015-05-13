@@ -1,0 +1,43 @@
+<section class="content__keeper newsletter clearfix">
+    <div class="content__keeper-inner">
+        <h1>Newsletter Subscriptions</h1>
+        <br/>
+        <h2>Sign up to our newsletters here:</h2>
+        <div>
+            <%= form_for :user, :url => :newsletter do |f| %>
+              <div class="table">
+                  <div class="table-row">
+                      <div class="table-cell">
+                          <%= text_field_tag :email, t('enter_your_email'), :class => 'email', :id => 'subscribe_email' %>
+                      </div>
+                      <div class="table-cell table-cell-fit">
+                          <%= submit_tag 'Sign up', :name => nil, :id => 'op_subscribe' %>
+                      </div>
+                  </div>
+              </div>
+            <% end %>
+        </div>
+        <br/>
+        <p>
+            Already signed up but want to unsubscribe?<br/>
+            No problem. Enter your email address below and we will remove you from our list.
+        </p>
+        <div>
+            <%= form_tag spree.products_path, :method => :get, class: "" do %>
+              <div class="table">
+                  <div class="table-row">
+                      <div class="table-cell">
+                          <%= text_field_tag "newsletter-unsubscribe", nil, :placeholder => 'email address' %>
+                      </div>
+                      <div class="table-cell table-cell-fit">
+                          <%= submit_tag 'Remove', :name => nil %>
+                      </div>
+                  </div>
+              </div>
+            <% end %>
+        </div>
+        <br/>
+        <p>We usually send between two and five newsletters per week - we recommend you sign up to receive them in order to get early information on Releases, Pre-Orders, Limited Editions and so on.</p>
+        <p>We never share your email address with anyone so you can subscribe with total confidence and unsubscribe from them whenever you like.</p>
+    </div>
+</section>

@@ -1,7 +1,14 @@
-class Spree::SubscriptionsController < Spree::BaseController
+class Spree::NewslettersController < Spree::BaseController
+
+  def show
+
+  end
+  def index
+
+  end
 
   def hominid
-    @hominid ||= Hominid::Base.new({ :api_key => Spree::Config.get(:mailchimp_api_key) })
+    @hominid ||= Hominid::API.new(Spree::Config.get(:mailchimp_api_key))
   end
 
   def create
