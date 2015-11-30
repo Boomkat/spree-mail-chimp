@@ -1,4 +1,4 @@
-class Spree::NewslettersController < Spree::BaseController
+class Spree::NewslettersController < Spree::StoreController
 
   def show
 
